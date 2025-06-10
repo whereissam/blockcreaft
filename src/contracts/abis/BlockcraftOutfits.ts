@@ -1,0 +1,75 @@
+export const BlockcraftOutfitsABI = [
+  {
+    type: 'constructor',
+    inputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    name: 'mint',
+    inputs: [
+      { name: 'to', type: 'address', internalType: 'address' },
+      { name: 'metadataURI', type: 'string', internalType: 'string' },
+      { name: 'outfitName', type: 'string', internalType: 'string' },
+      { name: 'rarity', type: 'string', internalType: 'string' },
+    ],
+    outputs: [{ name: '', type: 'uint256', internalType: 'uint256' }],
+    stateMutability: 'payable',
+  },
+  {
+    type: 'function',
+    name: 'mintPrice',
+    inputs: [],
+    outputs: [{ name: '', type: 'uint256', internalType: 'uint256' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    name: 'tokenURI',
+    inputs: [{ name: 'tokenId', type: 'uint256', internalType: 'uint256' }],
+    outputs: [{ name: '', type: 'string', internalType: 'string' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    name: 'getOutfitInfo',
+    inputs: [{ name: 'tokenId', type: 'uint256', internalType: 'uint256' }],
+    outputs: [
+      { name: 'name', type: 'string', internalType: 'string' },
+      { name: 'rarity', type: 'string', internalType: 'string' },
+    ],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    name: 'totalSupply',
+    inputs: [],
+    outputs: [{ name: '', type: 'uint256', internalType: 'uint256' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    name: 'balanceOf',
+    inputs: [{ name: 'owner', type: 'address', internalType: 'address' }],
+    outputs: [{ name: '', type: 'uint256', internalType: 'uint256' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    name: 'ownerOf',
+    inputs: [{ name: 'tokenId', type: 'uint256', internalType: 'uint256' }],
+    outputs: [{ name: '', type: 'address', internalType: 'address' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'event',
+    name: 'OutfitMinted',
+    inputs: [
+      { name: 'to', type: 'address', indexed: true, internalType: 'address' },
+      { name: 'tokenId', type: 'uint256', indexed: true, internalType: 'uint256' },
+      { name: 'outfitName', type: 'string', indexed: false, internalType: 'string' },
+      { name: 'rarity', type: 'string', indexed: false, internalType: 'string' },
+    ],
+    anonymous: false,
+  },
+] as const;

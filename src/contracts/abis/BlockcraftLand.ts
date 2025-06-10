@@ -1,0 +1,80 @@
+export const BlockcraftLandABI = [
+  {
+    type: 'constructor',
+    inputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    name: 'mintLand',
+    inputs: [
+      { name: 'x', type: 'int256', internalType: 'int256' },
+      { name: 'z', type: 'int256', internalType: 'int256' },
+    ],
+    outputs: [{ name: '', type: 'uint256', internalType: 'uint256' }],
+    stateMutability: 'payable',
+  },
+  {
+    type: 'function',
+    name: 'landPrice',
+    inputs: [],
+    outputs: [{ name: '', type: 'uint256', internalType: 'uint256' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    name: 'getLandInfo',
+    inputs: [{ name: 'tokenId', type: 'uint256', internalType: 'uint256' }],
+    outputs: [
+      { name: 'x', type: 'int256', internalType: 'int256' },
+      { name: 'z', type: 'int256', internalType: 'int256' },
+      { name: 'owner', type: 'address', internalType: 'address' },
+      { name: 'isForSale', type: 'bool', internalType: 'bool' },
+      { name: 'salePrice', type: 'uint256', internalType: 'uint256' },
+      { name: 'isRentable', type: 'bool', internalType: 'bool' },
+      { name: 'rentPrice', type: 'uint256', internalType: 'uint256' },
+      { name: 'renter', type: 'address', internalType: 'address' },
+      { name: 'rentExpires', type: 'uint256', internalType: 'uint256' },
+    ],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    name: 'rentLand',
+    inputs: [
+      { name: 'tokenId', type: 'uint256', internalType: 'uint256' },
+      { name: 'durationDays', type: 'uint256', internalType: 'uint256' },
+    ],
+    outputs: [],
+    stateMutability: 'payable',
+  },
+  {
+    type: 'function',
+    name: 'setLandForSale',
+    inputs: [
+      { name: 'tokenId', type: 'uint256', internalType: 'uint256' },
+      { name: 'forSale', type: 'bool', internalType: 'bool' },
+      { name: 'price', type: 'uint256', internalType: 'uint256' },
+    ],
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    name: 'balanceOf',
+    inputs: [{ name: 'owner', type: 'address', internalType: 'address' }],
+    outputs: [{ name: '', type: 'uint256', internalType: 'uint256' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'event',
+    name: 'LandMinted',
+    inputs: [
+      { name: 'to', type: 'address', indexed: true, internalType: 'address' },
+      { name: 'tokenId', type: 'uint256', indexed: true, internalType: 'uint256' },
+      { name: 'x', type: 'int256', indexed: false, internalType: 'int256' },
+      { name: 'z', type: 'int256', indexed: false, internalType: 'int256' },
+    ],
+    anonymous: false,
+  },
+] as const;
